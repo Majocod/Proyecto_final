@@ -7,7 +7,7 @@ public class RegistroTemperaturas {
         "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
     };
-
+    //menú de opciones.
     public void iniciar() {
         boolean salir = false;
         while (!salir) {
@@ -28,7 +28,7 @@ public class RegistroTemperaturas {
             }
         }
     }
-
+    //Menú principal
     private void mostrarMenu() {
         System.out.println("\n--- Menú ---");
         System.out.println("1. Registrar estaciones");
@@ -79,7 +79,7 @@ public class RegistroTemperaturas {
             System.out.printf("Mínima: %.2f°C\n", est.getTemperaturaMinima());
         }
     }
-
+    
     private void verAnalisisMensual() {
         if (estaciones == null) return;
         for (int mes = 0; mes < 12; mes++) {
