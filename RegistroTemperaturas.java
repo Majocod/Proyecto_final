@@ -40,21 +40,25 @@ public class RegistroTemperaturas {
         System.out.println("7. Salir");
     }
 
-    private void registrarEstaciones() {
-        int cantidad = leerEntero("¿Cuántas estaciones desea registrar? ");
-        estaciones = new EstacionMeteorologica[cantidad];
-        for (int i = 0; i < cantidad; i++) {
-            String nombre;
-            do {
-                System.out.print("Nombre de la estación " + (i + 1) + ": ");
-                nombre = scanner.nextLine().trim();
-                if (nombre.isEmpty()) {
-                    System.out.println("El nombre no puede estar vacío.");
-                }
-            } while (nombre.isEmpty());
-            estaciones[i] = new EstacionMeteorologica(nombre);
-        }
+  private void registrarEstaciones() {
+    int cantidad = leerEntero("¿Cuántas estaciones desea registrar? ");
+    estaciones = new EstacionMeteorologica[cantidad];
+    for (int i = 0; i < cantidad; i++) {
+        String nombre;
+        do {
+            System.out.print("Nombre de la estación " + (i + 1) + ": ");
+            nombre = scanner.nextLine().trim();
+            // Validar que no esté vacío y solo contenga letras y espacios
+            if (nombre.isEmpty()) {
+                System.out.println("El nombre no puede estar vacío.");
+            } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+                System.out.println("El nombre solo puede contener letras y espacios.");
+            } else {reak; // nombre válido
+            }
+        } while (true);
+        estaciones[i] = new EstacionMeteorologica(nombre);
     }
+}
 
     private void cargarTemperaturas() {
         if (estaciones == null) {
